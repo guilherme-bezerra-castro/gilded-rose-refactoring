@@ -1,3 +1,11 @@
+> **Nota:** Este repositório é baseado no kata [GildedRose-Refactoring-Kata](https://github.com/emilybache/GildedRose-Refactoring-Kata)
+> criado por [Emily Bache](https://github.com/emilybache), licenciado sob MIT.
+> O conteúdo abaixo é o README original do projeto. As modificações feitas
+> neste repositório são parte de um trabalho acadêmico da disciplina de
+> Engenharia de Software.
+
+---
+
 _Support this and all my katas via [Patreon](https://www.patreon.com/EmilyBache)_
 
 # Gilded Rose Refactoring Kata
