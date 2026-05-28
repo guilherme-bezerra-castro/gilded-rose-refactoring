@@ -166,4 +166,39 @@ public class GildedRoseTest
 
         Assert.Equal(50, items[0].Quality);
     }
+
+    // Conjured
+    [Fact]
+    public void Conjured_BeforeSellingQualityDecreases2()
+    {
+        var items = new List<Item> { new Item { Name = "Conjured Mana Cake", SellIn = 5, Quality = 10 } };
+        var app = new GildedRose(items);
+
+        app.UpdateQuality();
+
+        Assert.Equal(8, items[0].Quality);
+    }
+
+    [Fact]
+    public void Conjured_AfterSellingQualityDecreases4()
+    {
+        var items = new List<Item> { new Item { Name = "Conjured Mana Cake", SellIn = 0, Quality = 10 } };
+        var app = new GildedRose(items);
+
+        app.UpdateQuality();
+
+        // After selling, it happens 2x faster than the usual, so (-2) * 2 = -4
+        Assert.Equal(6, items[0].Quality);
+    }
+
+    [Fact]
+    public void Conjured_QualityIsNotNegative()
+    {
+        var items = new List<Item> { new Item { Name = "Conjured Mana Cake", SellIn = 5, Quality = 1 } };
+        var app = new GildedRose(items);
+
+        app.UpdateQuality();
+
+        Assert.Equal(0, items[0].Quality);
+    }
 }
