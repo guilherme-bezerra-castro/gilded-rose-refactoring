@@ -8,7 +8,7 @@ public class GildedRoseTest
 {
     // Normal Item
     [Fact]
-    public void NormalItem_BeforeSelling_QualityDecreaseBy1()
+    public void NormalItem_BeforeSellingQualityDecreases1()
     {
         IList<Item> Items = new List<Item> { new Item { Name = "Elixir of the Mongoose", SellIn = 5, Quality = 10 } };
         GildedRose app = new GildedRose(Items);
@@ -16,11 +16,11 @@ public class GildedRoseTest
         app.UpdateQuality();
 
         Assert.Equal(9, Items[0].Quality);
-        Assert.Equal(4, Items[0].Quality);
+        Assert.Equal(4, Items[0].SellIn);
     }
 
     [Fact]
-    public void NormalItem_AfterSelling_QualityDecreaseBy2()
+    public void NormalItem_AfterSellingQualityDecreases2()
     {
         var items = new List<Item> { new Item { Name = "Elixir of the Mongoose", SellIn = 0, Quality = 10 } };
         var app = new GildedRose(items);
@@ -55,7 +55,7 @@ public class GildedRoseTest
 
     // Aged Brie
     [Fact]
-    public void AgedBrie_QualityIncrease1PerDay()
+    public void AgedBrie_QualityIncreases1PerDay()
     {
         var items = new List<Item> { new Item { Name = "Aged Brie", SellIn = 10, Quality = 20 } };
         var app = new GildedRose(items);
